@@ -30,6 +30,29 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Page'),
       ),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              child: const Text('Convert To Json'),
+              onPressed: () {
+                XmltoJsonGenerator.instance.convertToJson(xmlString: 'Example');
+              },
+            ),
+            ElevatedButton(
+              child: const Text('Convert To Xml'),
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          XmltoJsonGenerator.instance.convertToXml(toJson: {});
+        },
+        tooltip: 'Convert To Json',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
